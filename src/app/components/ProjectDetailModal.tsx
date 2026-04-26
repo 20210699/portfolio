@@ -100,9 +100,9 @@ export default function ProjectDetailModal({
             <ul className="space-y-2">
               {project.keyFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-gradient-to-br from-[#FFB800] to-[#FF8A00] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#FFF8E7] border border-[#FFB800]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg
-                      className="w-3 h-3 text-white"
+                      className="w-3 h-3 text-[#FF8A00]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -127,7 +127,7 @@ export default function ProjectDetailModal({
               {project.techStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1.5 bg-gradient-to-r from-[#FFB800] to-[#FF8A00] text-white text-sm"
+                  className="px-3 py-1.5 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-sm font-medium"
                 >
                   {tech}
                 </span>
@@ -135,47 +135,51 @@ export default function ProjectDetailModal({
             </div>
           </div>
 
-          <div className="bg-[#FFF8E7] border border-[#FFB800]/30 p-8">
-            <h3 className="text-lg font-bold text-[#222222] mb-6">
+          <div>
+            <h3 className="text-lg font-bold text-[#222222] mb-3">
               Trouble Shooting
             </h3>
 
-            <div className="space-y-6">
-              <div className="bg-white border border-gray-200 p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-red-100 text-red-600 flex items-center justify-center font-bold">
-                    P
-                  </div>
-                  <h4 className="text-base font-bold text-[#222222]">Problem</h4>
-                </div>
-                <p className="text-sm text-gray-700 leading-relaxed pl-13">
-                  {project.troubleShooting.problem}
-                </p>
-              </div>
+            <div className="space-y-8">
+              {project.troubleShooting.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-[#FFB800]/30 bg-[#FFFDF6] p-6"
+                >
+                  <h4 className="text-lg font-bold text-[#222222] mb-4">
+                    {item.title}
+                  </h4>
 
-              <div className="bg-white border border-gray-200 p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
-                    S
-                  </div>
-                  <h4 className="text-base font-bold text-[#222222]">Solution</h4>
-                </div>
-                <p className="text-sm text-gray-700 leading-relaxed pl-13">
-                  {project.troubleShooting.solution}
-                </p>
-              </div>
+                  <div className="space-y-5">
+                    <div>
+                      <p className="text-sm font-semibold text-red-600 mb-2">
+                        Trouble
+                      </p>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {item.trouble}
+                      </p>
+                    </div>
 
-              <div className="bg-white border border-gray-200 p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center font-bold">
-                    R
+                    <div>
+                      <p className="text-sm font-semibold text-blue-600 mb-2">
+                        Solution
+                      </p>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {item.solution}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-green-600 mb-2">
+                        Result
+                      </p>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {item.result}
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="text-base font-bold text-[#222222]">Result</h4>
                 </div>
-                <p className="text-sm text-gray-700 leading-relaxed pl-13">
-                  {project.troubleShooting.result}
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -183,7 +187,7 @@ export default function ProjectDetailModal({
         <div className="sticky bottom-0 bg-white border-t border-gray-200 px-8 py-5">
           <button
             onClick={onClose}
-            className="w-full px-6 py-2.5 bg-gradient-to-r from-[#FFB800] to-[#FF8A00] border border-[#FFB800] text-white font-medium hover:from-[#FFA700] hover:to-[#FF7900] transition-all"
+            className="w-full px-6 py-2.5 bg-[#FF8A00] border border-[#FF8A00] text-white font-medium hover:bg-[#F07F00] transition-colors"
           >
             Close
           </button>

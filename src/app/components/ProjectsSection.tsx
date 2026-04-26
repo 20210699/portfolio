@@ -16,7 +16,9 @@ export default function ProjectsSection({
           Projects
         </h2>
         <p className="text-center text-gray-600 mb-12">
-          실제 서비스 경험을 통해 성장한 프로젝트들입니다
+          실제 서비스 경험을 바탕으로 성장해 온 주요 프로젝트들입니다.
+          <br />
+          클릭하면 각 프로젝트의 상세 내용을 확인할 수 있습니다.
         </p>
 
         <div className="grid grid-cols-3 gap-6">

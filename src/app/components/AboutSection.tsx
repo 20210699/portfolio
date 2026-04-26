@@ -30,16 +30,19 @@ export default function AboutSection() {
                   김예빈
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">Backend Developer</p>
-                <p className="text-sm text-gray-500">
-                  yebin.kim@example.com
-                </p>
+                <a
+                  href="mailto:yb021004@gmail.com"
+                  className="text-sm text-gray-500 hover:text-[#FF8A00] transition-colors"
+                >
+                  yb021004@gmail.com
+                </a>
               </div>
 
               <div className="space-y-6 border-t border-gray-100 pt-6">
                 <div>
                   <h4 className="text-xs font-medium text-gray-500 mb-2">EDUCATION</h4>
-                  <p className="text-sm text-[#222222]">서울대학교</p>
-                  <p className="text-xs text-gray-500">컴퓨터공학과 (2019-2023)</p>
+                  <p className="text-sm text-[#222222]">덕성여자대학교</p>
+                  <p className="text-xs text-gray-500">컴퓨터공학전공 / 수학전공 (2021.03 - 2026.02)</p>
                 </div>
 
                 <div>
@@ -75,7 +78,7 @@ export default function AboutSection() {
               </h3>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#FFB800] to-[#FF8A00] flex items-center justify-center flex-shrink-0 text-white font-bold">
+                  <div className="w-10 h-10 border border-[#FFB800]/20 bg-[#FFF8E7] flex items-center justify-center flex-shrink-0 text-[#FF8A00] text-sm font-semibold">
                     1
                   </div>
                   <div>
@@ -89,7 +92,7 @@ export default function AboutSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#FFB800] to-[#FF8A00] flex items-center justify-center flex-shrink-0 text-white font-bold">
+                  <div className="w-10 h-10 border border-[#FFB800]/20 bg-[#FFF8E7] flex items-center justify-center flex-shrink-0 text-[#FF8A00] text-sm font-semibold">
                     2
                   </div>
                   <div>
@@ -103,7 +106,7 @@ export default function AboutSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#FFB800] to-[#FF8A00] flex items-center justify-center flex-shrink-0 text-white font-bold">
+                  <div className="w-10 h-10 border border-[#FFB800]/20 bg-[#FFF8E7] flex items-center justify-center flex-shrink-0 text-[#FF8A00] text-sm font-semibold">
                     3
                   </div>
                   <div>
@@ -126,7 +129,7 @@ export default function AboutSection() {
                 {techStack.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-gradient-to-r from-[#FFB800] to-[#FF8A00] text-white text-sm"
+                    className="px-3 py-1.5 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-sm font-medium"
                   >
                     {tech}
                   </span>

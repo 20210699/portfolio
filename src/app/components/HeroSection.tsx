@@ -19,11 +19,11 @@ export default function HeroSection({ onScrollDown }: HeroSectionProps) {
         </div>
 
         <h1 className="text-7xl font-bold mb-4 tracking-tight">
-          Kim Yebin
+          김예빈
         </h1>
 
         <p className="text-2xl mb-12 opacity-90">
-          Backend Developer
+          YAPP 28th Server YB
         </p>
 
         <div className="flex items-center justify-center gap-4 text-sm">

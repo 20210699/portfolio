@@ -5,10 +5,11 @@ interface ProjectSlideProps {
   techStack: string[];
   role: string;
   troubleShooting: {
-    problem: string;
+    title: string;
+    trouble: string;
     solution: string;
     result: string;
-  };
+  }[];
 }
 
 export default function ProjectSlide({
@@ -46,7 +47,7 @@ export default function ProjectSlide({
                 {techStack.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-gradient-to-r from-[#FFB800] to-[#FF8A00] text-white rounded-full text-sm"
+                    className="px-3 py-1.5 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-sm font-medium"
                   >
                     {tech}
                   </span>
@@ -63,36 +64,34 @@ export default function ProjectSlide({
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-[#222222] mb-6">Trouble Shooting</h3>
 
-            <div className="space-y-6">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold">
-                    P
-                  </div>
-                  <h4 className="text-lg font-bold text-[#222222]">Problem</h4>
-                </div>
-                <p className="text-gray-700 pl-10">{troubleShooting.problem}</p>
-              </div>
+            <div className="space-y-8">
+              {troubleShooting.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-[#FFB800]/30 rounded-xl bg-[#FFFDF6] p-5"
+                >
+                  <h4 className="text-xl font-bold text-[#222222] mb-3">
+                    {item.title}
+                  </h4>
 
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
-                    S
-                  </div>
-                  <h4 className="text-lg font-bold text-[#222222]">Solution</h4>
-                </div>
-                <p className="text-gray-700 pl-10">{troubleShooting.solution}</p>
-              </div>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="font-semibold text-red-600 mb-2">Trouble</p>
+                      <p className="text-gray-700">{item.trouble}</p>
+                    </div>
 
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-green-100 text-green-600 flex items-center justify-center font-bold">
-                    R
+                    <div>
+                      <p className="font-semibold text-blue-600 mb-2">Solution</p>
+                      <p className="text-gray-700">{item.solution}</p>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-green-600 mb-2">Result</p>
+                      <p className="text-gray-700">{item.result}</p>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-[#222222]">Result</h4>
                 </div>
-                <p className="text-gray-700 pl-10">{troubleShooting.result}</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>

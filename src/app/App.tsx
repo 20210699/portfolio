@@ -19,10 +19,11 @@ export interface Project {
   github?: string;
   demo?: string;
   troubleShooting: {
-    problem: string;
+    title: string;
+    trouble: string;
     solution: string;
     result: string;
-  };
+  }[];
 }
 
 export default function App() {
@@ -45,11 +46,14 @@ export default function App() {
         '메시지 영속성 및 검색 기능'
       ],
       github: 'https://github.com/yebin-kim/realtime-chat',
-      troubleShooting: {
-        problem: '동시 접속자 증가로 인한 메시지 지연 문제 발생 (평균 응답 시간 3초)',
-        solution: 'Redis Pub/Sub 도입 및 DB 쿼리 최적화, 커넥션 풀 튜닝을 통해 병목 지점 해소',
-        result: '평균 응답 시간 200ms로 개선 (93% 감소), 동시 접속자 5000명 처리 가능'
-      }
+      troubleShooting: [
+        {
+          title: '메시지 지연 개선',
+          trouble: '동시 접속자 증가로 인해 메시지 지연이 발생했고, 평균 응답 시간이 3초까지 증가했습니다.',
+          solution: 'Redis Pub/Sub 도입, DB 쿼리 최적화, 커넥션 풀 튜닝을 통해 주요 병목 지점을 해소했습니다.',
+          result: '평균 응답 시간을 200ms로 줄였고, 동시 접속자 5000명 이상을 안정적으로 처리할 수 있게 됐습니다.'
+        }
+      ]
     },
     {
       id: 2,
@@ -67,11 +71,14 @@ export default function App() {
         '주문 상태 추적 시스템'
       ],
       github: 'https://github.com/yebin-kim/ecommerce-platform',
-      troubleShooting: {
-        problem: '결제 트랜잭션 중 동시성 이슈로 재고 차감 오류 발생',
-        solution: 'Pessimistic Lock 및 분산 락 적용, 트랜잭션 격리 수준 조정으로 동시성 문제 해결',
-        result: '재고 오차율 0%로 개선, 결제 성공률 99.8% 달성'
-      }
+      troubleShooting: [
+        {
+          title: '재고 차감 동시성 제어',
+          trouble: '결제 트랜잭션이 동시에 처리되면서 재고가 중복 차감되거나 누락되는 오류가 발생했습니다.',
+          solution: 'Pessimistic Lock과 분산 락을 적용하고 트랜잭션 격리 수준을 조정해 동시성 제어를 강화했습니다.',
+          result: '재고 오차율을 0%로 낮췄고, 결제 성공률을 99.8%까지 끌어올렸습니다.'
+        }
+      ]
     },
     {
       id: 3,
@@ -89,11 +96,14 @@ export default function App() {
         'A/B 테스트 기반 추천 정확도 개선'
       ],
       github: 'https://github.com/yebin-kim/recommendation-system',
-      troubleShooting: {
-        problem: '추천 알고리즘 실행 시간 과다로 사용자 경험 저하 (평균 5초)',
-        solution: 'ElasticSearch 캐싱 전략 도입 및 배치 처리로 추천 결과 사전 계산',
-        result: '응답 시간 500ms로 단축, 추천 정확도 15% 향상'
-      }
+      troubleShooting: [
+        {
+          title: '추천 응답 속도 개선',
+          trouble: '추천 알고리즘 실행 시간이 길어지면서 평균 응답 시간이 5초 수준까지 증가했습니다.',
+          solution: 'ElasticSearch 캐싱 전략을 도입하고 배치 처리로 추천 결과를 사전 계산하도록 구조를 변경했습니다.',
+          result: '응답 시간을 500ms까지 단축했고, 추천 정확도도 15% 향상됐습니다.'
+        }
+      ]
     }
   ];
 

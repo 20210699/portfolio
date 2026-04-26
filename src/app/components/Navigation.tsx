@@ -11,7 +11,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
             onClick={() => onNavigate('hero')}
             className="text-base font-bold text-[#222222]"
           >
-            Kim Yebin
+            Portfolio
           </button>
 
           <div className="flex items-center gap-8">
