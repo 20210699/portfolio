@@ -1,4 +1,4 @@
-import type { Project } from '../App';
+import type { Project } from '../types/project';
 
 interface ProjectsSectionProps {
   projects: Project[];

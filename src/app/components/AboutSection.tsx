@@ -46,12 +46,11 @@ export default function AboutSection() {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-medium text-gray-500 mb-2">INTERESTS</h4>
+                  <h4 className="text-xs font-medium text-gray-500 mb-2">EXPERIENCE & ACTIVITIES</h4>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>Backend Development</li>
-                    <li>Service Operation</li>
-                    <li>Infrastructure</li>
-                    <li>Problem Solving</li>
+                    <li>UMC 8기 덕성여대 회장</li>
+                    <li>UMC 7기 Spring Boot 파트</li>
+                    <li>UMC 6기 Spring Boot 파트</li>
                   </ul>
                 </div>
               </div>
