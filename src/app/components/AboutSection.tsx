@@ -1,3 +1,5 @@
+import profileImage from '../../assets/20251119 증명사진.JPG';
+
 export default function AboutSection() {
   const techStack = [
     'Java',
@@ -21,8 +23,12 @@ export default function AboutSection() {
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-2">
             <div className="bg-white border border-gray-200 p-8 sticky top-24" style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}>
-              <div className="w-32 h-32 bg-gradient-to-br from-[#FFB800] to-[#FF8A00] mx-auto mb-6 flex items-center justify-center text-white text-5xl font-bold">
-                YB
+              <div className="w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full border border-gray-200 bg-white">
+                <img
+                  src={profileImage}
+                  alt="김예빈 프로필 사진"
+                  className="size-full object-contain scale-95"
+                />
               </div>
 
               <div className="text-center mb-8">

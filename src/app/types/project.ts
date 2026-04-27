@@ -10,9 +10,11 @@ export interface Project {
   name: string;
   description: string;
   thumbnail: string;
+  themeColor: string;
   period: string;
   techStack: string[];
   role: string;
+  responsibilities: string[];
   overview: string;
   keyFeatures: string[];
   github?: string;

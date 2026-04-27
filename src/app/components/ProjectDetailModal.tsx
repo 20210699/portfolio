@@ -56,11 +56,11 @@ export default function ProjectDetailModal({
 
           <div className="grid grid-cols-3 gap-6">
             <div className="bg-[#F9FAFB] border border-gray-200 p-4">
-              <h4 className="text-xs font-medium text-gray-500 mb-2">Period</h4>
+              <h4 className="text-xs font-medium text-gray-500 mb-2">프로젝트 기간</h4>
               <p className="text-sm text-[#222222]">{project.period}</p>
             </div>
             <div className="bg-[#F9FAFB] border border-gray-200 p-4">
-              <h4 className="text-xs font-medium text-gray-500 mb-2">Role</h4>
+              <h4 className="text-xs font-medium text-gray-500 mb-2">역할</h4>
               <p className="text-sm text-[#222222]">{project.role}</p>
             </div>
             <div className="bg-[#F9FAFB] border border-gray-200 p-4 flex items-center">
@@ -86,7 +86,7 @@ export default function ProjectDetailModal({
 
           <div>
             <h3 className="text-lg font-bold text-[#222222] mb-3">
-              Project Overview
+              프로젝트 소개
             </h3>
             <p className="text-gray-700 leading-relaxed">
               {project.overview}
@@ -95,7 +95,23 @@ export default function ProjectDetailModal({
 
           <div>
             <h3 className="text-lg font-bold text-[#222222] mb-3">
-              Key Features
+              기술 스택
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1.5 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-sm font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-[#222222] mb-3">
+              주요 기능
             </h3>
             <ul className="space-y-2">
               {project.keyFeatures.map((feature, index) => (
@@ -122,22 +138,24 @@ export default function ProjectDetailModal({
           </div>
 
           <div>
-            <h3 className="text-lg font-bold text-[#222222] mb-3">Tech Stack</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1.5 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-sm font-medium"
-                >
-                  {tech}
-                </span>
+            <h3 className="text-lg font-bold text-[#222222] mb-3">
+              담당 업무
+            </h3>
+            <ul className="space-y-2">
+              {project.responsibilities.map((responsibility, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-1.5 h-1.5 bg-[#FF8A00]" />
+                  </div>
+                  <span className="text-sm text-gray-700">{responsibility}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-bold text-[#222222] mb-3">
-              Trouble Shooting
+              트러블 슈팅
             </h3>
 
             <div className="space-y-8">
@@ -153,7 +171,7 @@ export default function ProjectDetailModal({
                   <div className="space-y-5">
                     <div>
                       <p className="text-sm font-semibold text-red-600 mb-2">
-                        Trouble
+                        문제 상황
                       </p>
                       <p className="text-sm text-gray-700 leading-relaxed">
                         {item.trouble}
@@ -162,7 +180,7 @@ export default function ProjectDetailModal({
 
                     <div>
                       <p className="text-sm font-semibold text-blue-600 mb-2">
-                        Solution
+                        해결 방법
                       </p>
                       <p className="text-sm text-gray-700 leading-relaxed">
                         {item.solution}
@@ -171,7 +189,7 @@ export default function ProjectDetailModal({
 
                     <div>
                       <p className="text-sm font-semibold text-green-600 mb-2">
-                        Result
+                        결과
                       </p>
                       <p className="text-sm text-gray-700 leading-relaxed">
                         {item.result}
@@ -189,7 +207,7 @@ export default function ProjectDetailModal({
             onClick={onClose}
             className="w-full px-6 py-2.5 bg-[#FF8A00] border border-[#FF8A00] text-white font-medium hover:bg-[#F07F00] transition-colors"
           >
-            Close
+            닫기
           </button>
         </div>
       </div>

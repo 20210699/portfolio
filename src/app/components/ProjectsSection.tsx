@@ -21,68 +21,54 @@ export default function ProjectsSection({
           클릭하면 각 프로젝트의 상세 내용을 확인할 수 있습니다.
         </p>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <div
               key={project.id}
               onClick={() => onProjectClick(project)}
-              className="bg-white border border-gray-200 overflow-hidden cursor-pointer transition-all hover:border-gray-300 group"
-              style={{ boxShadow: '0 2px 6px rgba(0,0,0,0.06)' }}
+              className="group relative min-h-[320px] cursor-pointer overflow-hidden border border-black/5 transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                boxShadow: '0 12px 30px rgba(0,0,0,0.08)'
+              }}
             >
-              <div className="aspect-video overflow-hidden bg-gradient-to-br from-[#FFB800] to-[#FF8A00]">
+              <div className="absolute inset-0">
                 <img
                   src={project.thumbnail}
                   alt={project.name}
-                  className="size-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#222222] mb-2">
-                  {project.name}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/70" />
 
-                <div className="mb-4 pb-4 border-b border-gray-100">
-                  <p className="text-xs text-gray-500 mb-1">{project.period}</p>
-                  <p className="text-xs font-medium text-[#222222]">
-                    {project.role}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.slice(0, 4).map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-[#FFF8E7] border border-[#FFB800]/20 text-[#FF8A00] text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 4 && (
-                    <span className="px-2 py-1 bg-gray-50 border border-gray-200 text-gray-600 text-xs">
-                      +{project.techStack.length - 4}
-                    </span>
-                  )}
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <span className="text-xs text-[#FF8A00] font-medium group-hover:gap-1.5 flex items-center gap-1 transition-all">
-                    View Details
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+              <div className="relative flex min-h-[320px] flex-col justify-between p-8">
+                <div className="flex items-start justify-between">
+                  <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/70">
+                    Project
                   </span>
+                  <span className="text-xs text-white/75">
+                    {project.period}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="max-w-[10ch] text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    {project.name}
+                  </h3>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 translate-y-full border-t border-white/15 bg-black/45 p-8 backdrop-blur-md transition-transform duration-300 group-hover:translate-y-0">
+                  <p className="mb-4 text-sm leading-relaxed text-white/88">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-medium text-white/75">
+                      {project.role}
+                    </span>
+                    <span className="text-xs font-medium text-white">
+                      상세 보기
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
