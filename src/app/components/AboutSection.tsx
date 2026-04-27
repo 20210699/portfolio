@@ -1,4 +1,4 @@
-import profileImage from '/dist/assets/20251119 증명사진-CJXQ7jvs.JPG';
+import profileImage from '../../assets/20251119 증명사진.JPG';
 
 export default function AboutSection() {
   const techStack = [
