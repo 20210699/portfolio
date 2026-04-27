@@ -87,7 +87,7 @@ export const projects: Project[] = [
     id: 2,
     name: 'Telegro',
     description: '음향/전자기기 B2B2C 이커머스 백엔드 — 회원 등급별 차등 가격과 PG 결제 연동을 갖춘 주문/결제 시스템',
-    thumbnail: 'src/assets/telegro.png',
+    thumbnail: 'dist/assets/telegro.png',
     period: '2024.09 – 2024.12',
     techStack: [
         'Java 17',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     id: 3,
     name: '마음말',
     description: 'NLP·이미지 생성 AI를 결합해 지적장애 학생의 언어 학습을 지원하고 교사와 연결하는 학습 중개 플랫폼 백엔드',
-    thumbnail: 'src/assets/maeummal.png',
+    thumbnail: 'dist/assets/maeummal.png',
     period: '2024.05 – 2024.10',
     techStack: [
         'Java 17',

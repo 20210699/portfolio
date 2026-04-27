@@ -1,16 +1,21 @@
-import profileImage from '../../assets/20251119 증명사진.JPG';
+import profileImage from '/dist/assets/20251119 증명사진-CJXQ7jvs.JPG';
 
 export default function AboutSection() {
   const techStack = [
-    'Java',
+    'Java 17',
     'Spring Boot',
+    'Spring Security',
+    'JWT/OAuth2',
     'JPA',
     'MySQL',
     'PostgreSQL',
     'Redis',
-    'AWS',
+    'WebSocket/STOMP',
+    'FastAPI',
+    'OpenAI API',
+    'AWS S3',
     'Docker',
-    'Kafka'
+    'GitHub Actions'
   ];
 
   return (
@@ -69,11 +74,13 @@ export default function AboutSection() {
                 Introduction
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                안정적이고 확장 가능한 시스템 설계를 추구하는 백엔드 개발자입니다.
-                실제 서비스 운영 경험을 통해 사용자 중심의 기술 의사결정의 중요성을 배웠습니다.
+                안정적으로 동작하는 백엔드 시스템을 만드는 데 집중하는 개발자입니다.
+                동작하는 코드를 만드는 것을 넘어, 예외와 장애 속에서도 흔들리지 않는 구조를 고민합니다.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                문제를 발견하고 해결하는 과정에서 성장하며, 팀과 함께 더 나은 제품을 만들어가는 것을 즐깁니다.
+                기능을 붙이는 것보다 구조를 정리하는 일에 더 많은 시간을 써왔습니다.
+                눈앞의 오류 뒤에 있는 설계 결합과 도메인 모델링의 빈틈을 찾아내,
+                같은 문제가 반복되지 않는 형태로 코드를 정리하는 것을 중요하게 생각합니다.
               </p>
             </div>
 
@@ -88,10 +95,11 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#222222] mb-1">
-                      문제 해결 중심 개발
+                      복잡한 시스템을 구조적으로 정리하는 역량
                     </h4>
                     <p className="text-sm text-gray-600">
-                      단순 구현을 넘어 근본적인 문제를 파악하고 최적의 솔루션을 찾습니다
+                      Spring Boot, FastAPI, 외부 디바이스, WebSocket이 연결된 멀티 서비스 환경에서도
+                      각 컴포넌트의 책임과 인터페이스를 정리해 전체 흐름을 안정화합니다
                     </p>
                   </div>
                 </div>
@@ -102,10 +110,11 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#222222] mb-1">
-                      실제 서비스 운영 경험
+                      도메인 중심의 백엔드 구현 경험
                     </h4>
                     <p className="text-sm text-gray-600">
-                      대규모 트래픽 처리, 성능 최적화, 장애 대응 등 실전 경험 보유
+                      인증, 주문/결제, 채팅, AI 학습, 파일 업로드, 통계 등
+                      다양한 도메인을 API와 데이터 모델 관점에서 설계하고 구현해왔습니다
                     </p>
                   </div>
                 </div>
@@ -116,10 +125,11 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#222222] mb-1">
-                      성능 및 구조 개선
+                      운영 관점의 문제 해결 능력
                     </h4>
                     <p className="text-sm text-gray-600">
-                      지속적인 모니터링과 분석을 통해 시스템을 개선합니다
+                      CI/CD, CORS, 웹훅, 데이터 정합성, 배포 환경 차이처럼
+                      실제 운영에서 드러나는 문제를 원인 중심으로 추적하고 개선합니다
                     </p>
                   </div>
                 </div>
